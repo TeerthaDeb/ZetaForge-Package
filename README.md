@@ -2,29 +2,54 @@
 
 A Node.js package to interact with Zetaforge APIs for executing pipelines and retrieving results.
 
-## Installation
+## Requirements
 
-You can install this package via npm. Make sure you have Node.js installed on your machine.
+- **Node.js**: Version 18 or higher is required to run the `zetaforge` package. You can download the latest version from the [Node.js official website](https://nodejs.org/).
+
+## Usage
+
+To get started with the `zetaforge` package, follow these steps:
+
+### Step 1: Create a JavaScript file
+
+Create a new JavaScript file (e.g., `index.js`) where you'll write your code to interact with the Zetaforge APIs.
+
+### Step 2: Install the Zetaforge package
+
+Open your terminal, navigate to your project directory, and run the following command to install the `zetaforge` package:
 
 ```bash
 npm install zetaforge
 ```
 
-## Usage
+### Step 3: Update your package.json
+To use ES modules, ensure that your package.json includes the following line:
+```bash
+"type": "module"
+```
 
-Here’s a basic example of how to use the `zetaforge` package to execute a pipeline and retrieve the results.
+* If the 'package.json' file is not created, create it and then include:
+```bash
+{
+  "type": "module"
+}
+```
+This setting allows you to use the import statement in your JavaScript files.
+
+### Step 4:
 
 ```js
 import Zetaforge from 'zetaforge';
 
-const zetaforge = new Zetaforge('https://stage.zetaforge.com:', 'YOUR_API_TOKEN');
+const zetaforge = new Zetaforge('https://anvil.zetaforge.com:', 'YOUR_API_TOKEN');
 
 const pipelineUuid = 'YOUR_PIPELINE_UUID';
 const pipelineHash = 'YOUR_PIPELINE_HASH';
 const inputs = {
-  "role": "\"You are a very mean spirited naturalist.\"",
-  "prompt": "\"Write an article about tigers\"",
-  "api_key": "\"YOUR API\""
+  "role": "\"GIVE IT A ROLE(like teacher, doctor, engineer or even plumber\"",
+  "prompt": "\"INSTRUCTIONS. SUCH AS : suggest me a place to visit in this summer\"",
+  "api_key": "\"YOUR API\"",
+	"SOME OTHER KEY" : "\"OTHER KEYS VALUE\""
 };
 
 async function executePipeline() {
@@ -36,7 +61,7 @@ async function executePipeline() {
   }
 }
 
-executePipeline();
+executePipeline(); // it will execute the pipeline....
 ```
 
 ## API
@@ -54,20 +79,10 @@ executePipeline();
 - **`hash`** (String): The hash of the pipeline.
 - **`inputs`** (Object): The inputs to be sent to the pipeline.
 
-Returns a Promise that resolves with the pipeline execution response or rejects with an error.
-
-## License
-
-This project is licensed under the [ISC License](https://opensource.org/licenses/ISC). The ISC License is a permissive open-source license that is very simple and easy to understand. It allows for almost unrestricted use, including personal, academic, or commercial use of the code, as long as the license text and copyright notice are included with the distribution.
-
-See the [LICENSE](LICENSE) file for the full text of the ISC License.
-
 ## Contact
 
 For any inquiries, support, or contributions related to this project, please contact:
 
-**Maharaj Teertha Deb**  
-Email: [maharaj.deb.concordia@gmail.com](maharaj.deb.concordia@gmail.com)  
-GitHub: [TeerthaDeb](https://github.com/TeerthaDeb)
-
-Feel free to reach out for any questions or issues you may have regarding the `zetaforge` package.
+**Zetane**  
+Email: [info@zetane.com](info@zetane.com)  
+GitHub: [Zetane](https://github.com/zetane)
