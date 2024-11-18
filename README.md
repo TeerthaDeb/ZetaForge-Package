@@ -49,12 +49,13 @@ const inputs = {
   "role": "\"GIVE IT A ROLE(like teacher, doctor, engineer or even plumber\"",
   "prompt": "\"INSTRUCTIONS. SUCH AS : suggest me a place to visit in this summer\"",
   "api_key": "\"YOUR API\"",
-	"SOME OTHER KEY" : "\"OTHER KEYS VALUE\""
+  "SOME OTHER KEY" : "\"OTHER KEYS VALUE\""
 };
 
 async function executePipeline() {
   try {
-    const executeResponse = await zetaforge.run(pipelineUuid, pipelineHash, inputs , anvilConfig.);
+    const specialToken = "s3AccessKeyId|~s3SecretAccessKey|~s3Bucket"
+    const executeResponse = await zetaforge.run(pipelineUuid, pipelineHash, inputs , specialToken);
     console.log("executeResponse: ", executeResponse);
   } catch (error) {
     console.error('Failed to execute pipeline:', error.message);
@@ -82,7 +83,8 @@ const inputs = {
 
 async function executePipeline() {
   try {
-    const executeResponse = await zetaforge.run(pipelineUuid, pipelineHash, inputs , anvilConfig.);
+    const specialToken = "s3AccessKeyId|~s3SecretAccessKey|~s3Bucket"
+    const executeResponse = await zetaforge.run(pipelineUuid, pipelineHash, inputs , specialToken);
     console.log("executeResponse: ", executeResponse);
   } catch (error) {
     console.error('Failed to execute pipeline:', error.message);
